@@ -19,7 +19,7 @@ def upload_pdf(request):
 
 
 def pdf_list(request):
-    pdfs = PDF.objects.all()
+    pdfs = PDF.objects.all().order_by('-id')
     return render(request, 'pdfupload/pdf_list.html', {'pdfs': pdfs})
 
 
