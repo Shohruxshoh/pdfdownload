@@ -26,7 +26,7 @@ class PDF(models.Model):
 
     def generate_qr_code(self):
         qr = qrcode.QRCode(version=1, box_size=10, border=5)
-        qr.add_data(f'http://127.0.0.1:8000/download/{self.id}/')
+        qr.add_data(f'https://kompyuterakademiyasi.pythonanywhere.com/download/{self.id}/')
         qr.make(fit=True)
         img = qr.make_image(fill='black', back_color='white')
         buffer = BytesIO()
